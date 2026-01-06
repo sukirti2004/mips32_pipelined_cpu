@@ -68,10 +68,10 @@ module test_mips32;
         // mycpu.Mem[13] = 32'h04010063; // ADDI r1, r0, 99 
         // mycpu.Mem[14] = 32'hFC000000; // HLT
 
-        mycpu.Mem[0] = 32'h04010005;
-        mycpu.Mem[1] = 32'h38C10000;
-        mycpu.Mem[2] = 32'h34C20000;
-        mycpu.Mem[3] = 32'hFC000000;
+        mycpu.Mem[0] = 32'h04010005; //ADDI R1 R0 5
+        mycpu.Mem[1] = 32'h38C10000; //SW R1 0{R6}
+        mycpu.Mem[2] = 32'h34C20000; //LW R2 0{R6}
+        mycpu.Mem[3] = 32'hFC000000; //HLT
 
         mycpu.Reg[6] = 32'h00000078;
 
@@ -104,4 +104,5 @@ module test_mips32;
         $dumpvars(0,test_mips32);
         #500 $finish;
     end
+
 endmodule
